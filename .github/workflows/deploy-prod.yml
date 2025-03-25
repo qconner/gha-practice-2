@@ -1,8 +1,12 @@
 name: Deploy to PROD
 on:
   workflow_dispatch:
-    branches:
-      - main
+    inputs:
+      gitRef:
+        description: 'Branch to deploy should be main'
+        required: true
+        default: 'main'
+        type: string
 jobs:
   deploy:
     runs-on: ubuntu-latest

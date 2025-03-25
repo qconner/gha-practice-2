@@ -1,8 +1,12 @@
 name: Deploy to STAGING/QA
 on:
   workflow_dispatch:
-    branches:
-      - develop
+    inputs:
+      gitRef:
+        description: 'Branch to deploy should be develop'
+        required: true
+        default: 'develop'
+        type: string
 jobs:
   deploy:
     runs-on: ubuntu-latest
