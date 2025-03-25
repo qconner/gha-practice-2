@@ -3,9 +3,7 @@ on:
   workflow_dispatch:
     inputs:
       gitRef:
-        description: 'Branch to deploy should be develop'
-        required: true
-        default: 'develop'
+        default: 'refs/heads/develop'
         type: string
 jobs:
   deploy:
