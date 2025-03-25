@@ -1,24 +1,19 @@
-name: Events Demo 1
+name: Deploy to PROD
 on:
   workflow_dispatch:
     branches:
-      - '**'
-  push:
-    branches:
-      - '**'
+      - main
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Output event data
-        run: echo "${{ toJSON(github.event) }}"
       - name: Get code
         uses: actions/checkout@v3
       - name: Install dependencies
         run: npm ci
-      - name: lint code
-        run: npm run lint
       - name: build code
         run: npm run build
       - name: fake deploy project
-        run: echo "Deploying..."
+        run: echo "Deploying to PROD..."
+      - name: Output event data
+        run: echo "${{ toJSON(github.event) }}"
