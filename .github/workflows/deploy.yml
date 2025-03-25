@@ -1,10 +1,6 @@
 name: Deploy code to QA or PROD
 on:
   workflow_dispatch:
-    inputs:
-      gitRef:
-        default: 'refs/heads/main'
-        type: string
 jobs:
   deploy-staging:
     if: github.ref == 'refs/heads/develop'
