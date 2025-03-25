@@ -12,8 +12,8 @@ jobs:
         run: npm ci
       - name: build code
         run: npm run build
-      - name: fake deploy project
-        run: echo "Deploying to STAGING..."
+      - name: deploy to STAGING
+        run: echo "Fake Deploying to STAGING..."
       - name: Output event data
         run: echo "${{ toJSON(github.event) }}"
   deploy-production:
@@ -26,7 +26,7 @@ jobs:
         run: npm ci
       - name: build code
         run: npm run build
-      - name: fake deploy project
-        run: echo "Deploying to PROD..."
+      - name: deploy to PRODUCTION
+        run: echo "Fake Deploying to PRODUCTION..."
       - name: Output event data
         run: echo "${{ toJSON(github.event) }}"
